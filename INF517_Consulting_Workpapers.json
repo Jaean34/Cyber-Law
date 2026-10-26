@@ -1,0 +1,29 @@
+{
+  "course": "INF517",
+  "project": "Week09-10 Consulting Lab",
+  "savedAt": "2026-10-26T07:19:05.762Z",
+  "entries": {
+    "group": "Kelompok 9",
+    "members": "1. Karine Olivia Permana \n2. Keren Sandra Sudarta",
+    "realorg": "CampusCloud / SmartEdu Academic Vault",
+    "F02": "Deskripsi Alert: Laporan klien SmartEdu terkait dugaan clone repository akun developer, kemunculan repositori publik serupa, dan akses folder ekspor data. Didukung temuan Week 07 bahwa akun admin tanpa MFA dan retensi log hanya 7 hari.   \nDampak CIA: Kerahasiaan (High), Integritas (Medium), Ketersediaan (Low).\nSeverity: High. Alasan: Potensi pencurian data/kode sumber serta kelemahan kontrol akses dan singkatnya log audit.",
+    "F03": "Pertanyaan Investigasi: Siapa pelaku clone dan akses folder? Apakah repositori publik berasal dari kebocoran internal? Apakah celah admin tanpa MFA dieksploitasi?\n\nHipotesis Alternatif: Aktivitas dilakukan developer sah yang gagal tercatat akibat retensi log pendek.\n\nSumber Bukti & Metode: Log cloud, log Git, dan kontrak (EV-01 s.d. EV-06). Analisis pasif tanpa eksploitasi/scanning ilegal.",
+    "F04": "[EV-01] Log Akses Cloud / IAM (07 Okt 2026, Tim IT Audit).   \n[EV-02] Log Repository Git / Aktivitas Clone (08 Okt 2026, Tim Forensik).   \n[EV-03] Dokumen Kontrak & SLA Vendor / Week 07",
+    "F05": "Bukti digital [EV-01] dan [EV-02] dikumpulkan secara internal dan disimpan di Secure Local Vault dengan enkripsi. Tidak ada transfer bukti ke pihak eksternal.",
+    "F06": "07 Okt 2026: Tercatat aktivitas ekspor metadata (EXPORT_METADATA).   \n08 Okt 2026 (07.15 WIB): Tiket insiden (INC-143) dibuka terkait aktivitas mencurigakan dan perubahan backup.   \n13 Okt 2026: Klien SmartEdu melaporkan dugaan insiden.",
+    "F07": "Temuan 1 (Otentikasi): Akun admin tidak menggunakan MFA. (Evidence: [EV-01], [EV-03] | Status: Indicated).   \nTemuan 2 (Log): Retensi log hanya 7 hari. (Evidence: [EV-01] | Status: Observed). ",
+    "F08": "UU PDP (UU No. 27 Tahun 2022): Mengatur perlindungan data pribadi dan batasan transfer data lintas batas.   \nUU ITE & Hak Cipta: Melindungi kode sumber, kepemilikan intelektual, dan melarang akses ilegal.\nKontrak (Week 07): Ketidaksesuaian masa retensi log (7 hari vs 90 hari) dan aturan notifikasi insiden.   \n\nURL Sumber Publik:\nhttps://peraturan.bpk.go.id/Details/229798/uu-no-27-tahun-2022\nhttps://www.scribd.com/document/825859221/Hak-Cipta-dan-Dasar-Teori-UU-ITE-1\n\nTanggal Akses: 26 Oktober 2026",
+    "F09": "1. Wajibkan MFA untuk Admin: Mencegah celah keamanan akibat akun admin tanpa MFA. (Owner: Tim IT | Prioritas: Tinggi | Tenggat: Segera).   \n2. Perpanjang Retensi Log ke 90 Hari: Memenuhi standar audit dan kebijakan keamanan universitas. (Owner: Tim Infrastruktur | Prioritas: Tinggi | Tenggat: 14 Hari).   \n3. Perbaikan Uji Pemulihan (RTO): Memastikan proses restore data selesai di bawah target 8 jam. (Owner: Tim Disaster Recovery | Prioritas: Tinggi | Tenggat: 30 Hari).",
+    "F10": "Executive Summary: Investigasi insiden dugaan clone repository menemukan kelemahan kontrol akses (admin tanpa MFA) dan singkatnya retensi log.   \nScope & Methodology: Audit dokumen publik, analisis log keamanan, dan pemeriksaan kepatuhan kontrak secara pasif.   \nFindings: Akun admin belum MFA, retensi log hanya 7 hari, dan uji pemulihan memakan waktu 30 jam.   \nLimitations: Analisis terbatas pada log simulasi dan dokumen publik tanpa melakukan eksploitasi sistem.   \nLegal Risk: Potensi pelanggaran UU PDP dan ketidakpatuhan klausul SLA kontrak.   \nRecommendations: Menunda penandatanganan kontrak (Hold) hingga vendor menyelesaikan seluruh tindakan korektif (MFA, log, dan perbaikan RTO).",
+    "qa0": true,
+    "qa1": true,
+    "qa2": true,
+    "qa3": true,
+    "qa4": true,
+    "qa5": true,
+    "qa6": true,
+    "qa7": true,
+    "qa8": true,
+    "qa9": true
+  }
+}
